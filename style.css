@@ -99,9 +99,9 @@ body {
 .voterAfterVote {
     background: #fff; 
     color: #000; 
-    height: 27px; 
+    height: 32px; 
     border:1px solid #c0c0c0; 
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     overflow:hidden;
     width:95%;
     text-align:left;
@@ -110,8 +110,8 @@ body {
 .votersSquare
 {
     border: 1px solid #c7c7c7; 
-    width: 17px; 
-    height: 17px; 
+    width: 25px; 
+    height: 25px; 
     margin: 3px;
     float: right;
 }
