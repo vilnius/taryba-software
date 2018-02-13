@@ -1,5 +1,6 @@
 <?php
 include 'helper/functions.php';
+include 'lib/config.php';
 ?>
 <?php
 // 0 - nera balsavimo; 1 - balsavimas vyksta; 2 - balsavimas baigtas; 3 - balsavimas pasirinktas;
@@ -233,10 +234,10 @@ if (TimePassed() >= 20 || TimePassed() == 0 || $balsavimoStatusas == "1") {
 					if (($balsavimoStatusas == "2") && (!file_exists($path))) {
 						$output = generateOutput($voteResult, $kvorumas, $rezultatas);
 						updateDalyviai($voteResult);
-						//uploadDalyviai('ftp.vilnius.lt', 'voting', 'voteres.2011');
-						uploadToFTP(null, 'ftp.vilnius.lt', 'voting', 'voteres.2011');
+						//uploadDalyviai(FTP_host, FTP_username, FTP_password);
+						uploadToFTP(null, FTP_host, FTP_username, FTP_password);
 						if (writerResultFile($output, $filename) == 1) {
-							uploadToFTP($filename, 'ftp.vilnius.lt', 'voting', 'voteres.2011');
+							uploadToFTP($filename, FTP_host, FTP_username, FTP_password);
 						}
 					}
 				}
@@ -245,7 +246,7 @@ if (TimePassed() >= 20 || TimePassed() == 0 || $balsavimoStatusas == "1") {
 				//$NebalsavoFilename = ($number+2)."_nebalsavo.txt";
 				$NebalsavoFilename = changeNumber($voteResult[0][1], 1);
 				if ((writerResultFile($NebalsavoOutput, $NebalsavoFilename) == 1)) {
-					uploadToFTP($NebalsavoFilename, 'ftp.vilnius.lt', 'voting', 'voteres.2011') or die("nepavyko $NebalsavoFilename");
+					uploadToFTP($NebalsavoFilename, FTP_host, FTP_username, FTP_password) or die("nepavyko $NebalsavoFilename");
 				}
 				?>
 <?php } ?>
