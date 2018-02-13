@@ -1,5 +1,6 @@
 <?php
 include 'helper/functions.php';
+include 'lib/config.php';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -120,7 +121,7 @@ include 'helper/functions.php';
 							//$render_result .= $id . " " . strtoupper($result) . "<br/>";
 							$output = generateOutput_bendru($id, $result, /* $meetingArray */ $participantArray);
 							if (writerResultFile($output, $filename) == 1) {
-								uploadToFTP($filename, 'ftp.vilnius.lt', 'voting', 'voteres.2011');
+								uploadToFTP($filename, FTP_host, FTP_username, FTP_password);
 							}
 						}
 					}
@@ -141,7 +142,7 @@ include 'helper/functions.php';
 						$HTMLoutput = str_replace(array("\r", "\n", "\t"), "", $HTMLoutput);
 						$HTMLfile = $_POST["number"] . "_secret.html";
 						writerResultFile($HTMLoutput, $HTMLfile);
-						uploadToFTP($HTMLfile, 'ftp.vilnius.lt', 'voting', 'voteres.2011');
+						uploadToFTP($HTMLfile, FTP_host, FTP_username, FTP_password);
 						echo "<script type=\"text/javascript\">
 					document.getElementById(\"votings\").disabled = true;
 					document.getElementById(\"render-list\").disabled = true;
@@ -158,7 +159,7 @@ include 'helper/functions.php';
 					  //	$HTMLoutput = str_replace(array("\r","\n","\t"),"",$HTMLoutput);
 					  //	$HTMLfile = $_POST["number"]."_secret.html";
 					  //	writerResultFile($HTMLoutput, $HTMLfile);
-					  uploadToFTP($HTMLfile, 'ftp.vilnius.lt', 'voting', 'voteres.2011');
+					  uploadToFTP($HTMLfile, FTP_host, FTP_username, FTP_password);
 					  //	echo "<script type=\"text/javascript\">
 					  //	document.getElementById(\"votings\").disabled = true;
 					  //	document.getElementById(\"render-list\").disabled = true;

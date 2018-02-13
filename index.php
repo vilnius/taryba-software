@@ -298,17 +298,17 @@ $getQuestion = $council->getCurrentQuestion(); //get question to show
 		$path = $resultPath . date("Y-m-d") . DIRECTORY_SEPARATOR . $filename;
 		if (($balsavimoStatusas == "2") && (!file_exists($path)) && (TimePassed() <= 60 && TimePassed() >= 0)) {
 			updateDalyviai($voteResult);
-			uploadToFTP(null, 'ftp.vilnius.lt', 'voting', 'voteres.2011');
+			uploadToFTP(null, FTP_host, FTP_username, FTP_password);
 			$output = generateOutput($voteResult, $kvorumas, $rezultatas);
 			if ((writerResultFile($output, $filename) == 1)) {
-				uploadToFTP($filename, 'ftp.vilnius.lt', 'voting', 'voteres.2011');
+				uploadToFTP($filename, FTP_host, FTP_username, FTP_password);
 			}
 		}
 
 		$NebalsavoOutput = generateOutputNebalsavo($voteResult);
 		$NebalsavoFilename = changeNumber($voteResult[0][1], 1);
 		if ((writerResultFile($NebalsavoOutput, $NebalsavoFilename) == 1)) {
-			uploadToFTP($NebalsavoFilename, 'ftp.vilnius.lt', 'voting', 'voteres.2011') or die("nepavyko $NebalsavoFilename");
+			uploadToFTP($NebalsavoFilename, FTP_host, FTP_username, FTP_password) or die("nepavyko $NebalsavoFilename");
 		}
 		if ($balsavimoStatusas == "2") {
 			$file = generatePrint($voteResult);
