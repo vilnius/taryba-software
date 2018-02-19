@@ -45,6 +45,8 @@ body {
 }
 
 .questionText {
+    padding-left: 5%;
+    padding-right: 5%;
     font-size:60px;
     margin-top:150px;
     font-weight:300;
