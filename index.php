@@ -153,14 +153,18 @@ $getQuestion = $council->getCurrentQuestion(); //get question to show
 				$fR = fopen($resultFile, 'w');
 				fwrite($fR, $voteResult[1][0] . "\r\n" . $voteStoppedAt);
 				fclose($fR);
-				if(TimePassed() >= 60 || TimePassed() <= 0) {
+				///Balsavimo rezultatu rodymo laikas
+				if(TimePassed() >= 30 || TimePassed() <= 0) {
 				//if (1 === 2) {
 					$statusTXT = $sessionName;
-					$statusInsert = '<div class="vote-status">'
-							. $statusTXT . '</div><div class="herbas">
-						</div>';
-					echo '<div class="header">'
-					. $statusInsert . '</div>';
+					if($getQuestion['ID'] == 1) {
+				        $statusInsert = '<div class="vote-status">'. $statusTXT . '</div><div class="herbas"></div>'; 
+                    } else {
+                        $statusInsert = '<div class="vote-status">'. $statusTXT . '</div>
+                        <div class="questionText">'.$getQuestion['pranesimo_tekstas'].'</div>
+                        <div class="footer"></div>';
+                    }
+                    echo $statusInsert;
 				} else {
 					?>
 

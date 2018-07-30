@@ -113,7 +113,8 @@ include 'helper/functions.php';
 								$participantArray = bendruUpdatePresent($bendruParticipantList/* , $participantArray */);
 							}
 							// JS
-							$filename = date("Y-m-d\TH.i.s") . " " . $_POST['posedis'] . " - " . ($id + 2) . " nr.txt";
+							//$filename = date("Y-m-d\TH.i.s") . " " . $_POST['posedis'] . " - " . ($id + 2) . " nr.txt";
+							$filename = date("Y-m-d\TH.i.s") . " " . $_POST['posedis'] . " - " . $id . " nr.txt";
 							$changeFromArray = Array('Ą', 'ą', 'Č', 'č', 'Ę', 'ę', 'Ė', 'ė', 'Į', 'į', 'Š', 'š', 'Ų', 'ų', 'Ū', 'ū', 'Ž', 'ž', ':', "\n", "\r", "\"", "'");
 							$changeToArray = Array('A', 'a', 'C', 'c', 'E', 'e', 'E', 'e', 'I', 'i', 'S', 's', 'U', 'u', 'U', 'u', 'Z', 'z', '.', '', '', '', '');
 							$filename = str_replace($changeFromArray, $changeToArray, $filename);

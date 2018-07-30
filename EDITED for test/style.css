@@ -1,0 +1,117 @@
+body {
+    background-color:#fff;
+    font-family: roboto;
+    margin:0px;
+}
+
+.page {
+    max-height: 720px;
+}
+    
+.herbas {
+    background: url(lib/images/logo.png) no-repeat 50% 50%; 
+    margin: 0 auto; 
+    width: 580px; 
+    height: 578px;
+    margin-top:150px;
+}
+
+.vote-status, .alert {
+    color: #c1272d; 
+    font-size: 60px; 
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight:500;
+    text-align:center;
+}
+
+.header {
+    color: #c1272d; 
+    font-size: 30px; 
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight:500;
+    text-align:center;
+    margin-bottom:5px;
+}
+
+.mainContent {
+    text-align: center; 
+    font-size: 190%;   
+}
+
+.questionText {
+    font-size:60px;
+    margin-top:150px;
+    font-weight:300;
+}
+
+.vote-subject {
+    font-size:40px;
+    margin-top:150px;
+    font-weight:300;
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    height:250px;
+    width:100%;
+    border-top:1px solid #ddd;
+    background-image:url('lib/images/logo_small.jpg');
+    background-repeat: no-repeat;
+    background-position:50% 50%;
+}
+
+.bottom {
+   position: absolute; 
+   bottom: 0; 
+   clear: left; 
+   text-align: center; 
+   padding-top: 10px; 
+   font-size: 25pt;
+    width:100%;
+}
+
+.participate {
+    margin: 0px 0;
+}
+
+.participate-text {
+    margin-bottom: 0px; 
+    font-size: 120%;
+    color:#000;
+}
+
+.countVotes {
+     text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+    font-weight: bold;
+}
+
+.voterAfterVote {
+    background: #fff; 
+    color: #000; 
+    height: 35px; 
+    border:1px solid #c0c0c0; 
+    margin-bottom: 5px;
+    overflow:hidden;
+    width:95%;
+    text-align:left;
+}
+
+.votersSquare
+{
+    border: 1px solid #c7c7c7; 
+    width: 27px; 
+    height: 27px; 
+    margin: 3px;
+    float: right;
+}
